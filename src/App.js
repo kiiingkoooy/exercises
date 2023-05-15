@@ -9,8 +9,6 @@ export default function App() {
   const addHandler = (e) => {
     e.preventDefault();
 
-    console.log(e.target.name);
-
     setInput([
       ...input,
       {
@@ -21,24 +19,26 @@ export default function App() {
     ]);
   };
 
-  console.log(input, '--InputData');
+  console.log(input, "--InputData");
 
   const toExamining = (id, name) => {
-    setInput(input.filter(pet => pet.id !== id))
-    setExamine([...examine,
+    setInput(input.filter((pet) => pet.id !== id));
+    setExamine([
+      ...examine,
       {
         id: id,
         name: name,
         category: "examining",
       },
-    ]);    
+    ]);
   };
 
-  console.log(examine, '--ExamineData');
+  console.log(examine, "--ExamineData");
 
   const toHuman = (id, name) => {
-    setExamine(examine.filter(pet => pet.id !== id))
-    setBackToHuman([...backToHuman,
+    setExamine(examine.filter((pet) => pet.id !== id));
+    setBackToHuman([
+      ...backToHuman,
       {
         id: id,
         name: name,
@@ -121,7 +121,7 @@ export default function App() {
                     <div className="flex justify-between items-center mx-3 mt-2 border-2">
                       <p className="text-[20px]" key={pet.id}>
                         {pet.name}
-                      </p>                      
+                      </p>
                     </div>
                   ))}
             </div>
